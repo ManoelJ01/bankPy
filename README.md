@@ -1,9 +1,20 @@
-# 🏦 BankPY | Sistema de Simulação Bancária e Investimentos
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
-![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
+# 🏦 BankPY
+### Sistema Avançado de Simulação Bancária e Investimentos
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/CustomTkinter-2B2D31?style=for-the-badge&logo=python&logoColor=white" alt="CustomTkinter">
+<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+
+<br>
+<img src="https://img.shields.io/github/last-commit/SEU-USUARIO/BankPY?style=flat-square&color=820AD1&labelColor=111" alt="Last Commit">
+<img src="https://img.shields.io/badge/Status-Concluído-2ECC71?style=flat-square&logo=checkmark" alt="Status">
+<img src="https://img.shields.io/badge/Licença-MIT-blue?style=flat-square" alt="License">
+
+</div>
+
+---
 
 > Uma aplicação desktop robusta para simulação de operações financeiras, trading e gestão de carteira, desenvolvida com Python e CustomTkinter.
 
