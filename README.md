@@ -1,66 +1,51 @@
-# 🏦 BankPY - Sistema Bancário e de Investimentos
+# 🏦 BankPY | Sistema de Simulação Bancária e Investimentos
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-blueviolet?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 
-## 📄 Sobre o Projeto
-
-O **BankPY** é uma aplicação desktop de simulação bancária desenvolvida em Python. O projeto utiliza a biblioteca **CustomTkinter** para criar uma interface gráfica moderna e responsiva (modo Light/Dark). 
-
-O objetivo do sistema é simular as operações essenciais de um banco digital, incluindo transações financeiras em tempo real e um módulo de investimentos com variação de preços e pagamento de dividendos simulados.
-
-## 🚀 Funcionalidades
-
-### 🔐 Autenticação e Segurança
-* **Login e Cadastro:** Sistema de criação de contas com persistência de dados.
-* **Validação de CPF:** Algoritmo real de validação de CPF (cálculo dos dígitos verificadores) para impedir cadastros inválidos.
-* **Proteção:** Verificação de duplicidade de contas.
-
-### 💸 Serviços Bancários
-* **Dashboard Interativo:** Visão geral do saldo e menu lateral de navegação.
-* **Transações:** Depósitos e Saques com atualização imediata do saldo.
-* **Sistema Pix:** Transferência de valores entre contas cadastradas utilizando o CPF como chave.
-* **Extrato:** Histórico detalhado de todas as operações (entradas e saídas) com data e hora.
-
-### 📈 Módulo de Investimentos (MarketAPI)
-* **Simulação de Bolsa:** Cotações de ações (ex: PETR4, VALE3) com variação aleatória de preços simulada a cada execução.
-* **Carteira de Ativos:** Compra e venda de ações, com cálculo de preço médio.
-* **Dividendos:** Sistema automatizado que verifica datas e "paga" proventos aos acionistas baseados em um calendário simulado.
+> Uma aplicação desktop robusta para simulação de operações financeiras, trading e gestão de carteira, desenvolvida com Python e CustomTkinter.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 📋 Visão Geral
 
-* **Linguagem:** [Python](https://www.python.org/)
-* **Interface Gráfica:** [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter) (Wrapper moderno do Tkinter).
-* **Persistência de Dados:** JSON (Armazenamento local em `bank_data.json` simulando um banco NoSQL).
-* **Bibliotecas Nativas:**
-    * `os` e `json`: Manipulação de arquivos e dados.
-    * `datetime`: Controle de timestamps e datas de dividendos.
-    * `random`: Simulação de volatilidade do mercado financeiro.
+O **BankPY** é uma solução de software que simula o ecossistema de um banco digital (Fintech). O projeto foi arquitetado para demonstrar a implementação de lógica de negócios complexa aliada a uma interface gráfica moderna.
+
+Diferente de sistemas básicos, o BankPY implementa um **motor de mercado financeiro** (`MarketAPI`), simulando volatilidade de ativos em tempo real e gerenciamento de dividendos baseado em datas, além de validação rigorosa de dados cadastrais (algoritmo de CPF).
 
 ---
 
-## ⚙️ Estrutura do Código
+## 🚀 Funcionalidades Principais
 
-O projeto foi estruturado seguindo princípios de orientação a objetos, separando a lógica de negócios da interface gráfica:
+### 🔐 Segurança e Autenticação
+- **Validação Algorítmica:** Implementação do algoritmo oficial de verificação de CPF (cálculo de dígitos verificadores) para impedir registros inválidos.
+- **Persistência Segura:** Sistema de login com verificação de credenciais armazenadas localmente.
+- **Prevenção de Duplicidade:** Verificação de unicidade de chaves (CPF) no banco de dados.
 
-* **`BancoBackend`**: Classe responsável por toda a lógica "server-side" (CRUD de usuários, validações, transações e manipulação do JSON).
-* **`MarketAPI`**: Classe estática que simula uma API externa de bolsa de valores e calendário de proventos.
-* **`App` & Frames**: Classes que herdam de `ctk.CTk` e `ctk.CTkFrame` para renderizar as telas (Login, Cadastro, Dashboard, Pix, Investimentos).
+### 💸 Core Banking
+- **Dashboard Financeiro:** Visualização consolidada de saldo e atalhos rápidos.
+- **Sistema Pix:** Transferências peer-to-peer (P2P) entre usuários cadastrados com atualização atômica de saldos.
+- **Ledger de Transações:** Registro imutável de todas as operações (Input/Output) com timestamp para auditoria (Extrato).
+
+### 📈 Módulo de Investimentos (Mock Market)
+- **Simulação de Volatilidade:** Variação dinâmica de preços de ativos (ex: PETR4, VALE3) a cada sessão.
+- **Gestão de Portfólio:** Compra e venda de ativos com cálculo automático de **Preço Médio**.
+- **Motor de Proventos:** Sistema que verifica datas de corte (Data Com) e executa o pagamento automático de dividendos na conta do usuário.
 
 ---
 
-## 📦 Como Executar
+## 🛠️ Arquitetura e Tecnologias
 
-### Pré-requisitos
-* Python 3.x instalado.
-* Gerenciador de pacotes `pip`.
+O projeto segue princípios de **Programação Orientada a Objetos (POO)** e separação de responsabilidades:
 
-### Passo a passo
+| Componente | Responsabilidade |
+|:--- |:--- |
+| **Frontend (View)** | Desenvolvido com `CustomTkinter` para uma UI moderna, responsiva e com suporte a temas (Light/Dark). |
+| **Backend (Controller/Model)** | Classe `BancoBackend` gerencia a lógica de negócios, validações e regras de transação. |
+| **Data Layer** | Persistência em arquivo JSON (`bank_data.json`), simulando um banco de dados NoSQL documental. |
+| **Mock API** | Classe estática `MarketAPI` que atua como um serviço externo de cotações e calendário corporativo. |
 
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/SEU-USUARIO/BankPY.git](https://github.com/SEU-USUARIO/BankPY.git)
-   cd BankPY
+---
+
